@@ -273,7 +273,7 @@ create_node() {
   echo -e "${YELLOW}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
   bash <(curl https://raw.githubusercontent.com/tbhkoffc/auto-install-thema/main/createnode.sh)
-  echo -e "                                                       "                                     "
+  echo -e "                                                       "
   echo -e "${GREEN}[+] =============================================== [+]${NC}"
   echo -e "${GREEN}[+]        ALL NODE INSTALLATIONS SUCCESSFUL        [+]${NC}"
   echo -e "${GREEN}[+] =============================================== [+]${NC}"
