@@ -41,4 +41,17 @@ $disk_space
 /var/lib/pterodactyl/volumes
 EOF
 
-echo "The location and node creation process is complete."
+echo "The location and node creation process is complete. Is heading to the installation stage of allocations..."
+
+read -p "Masukkan IP address untuk allocation: " ip_address
+read -p "Masukkan Port (contoh: 25565): " port
+read -p "Masukkan IP alias (boleh kosong): " ip_alias
+
+php artisan p:allocation:make <<EOF
+$node_name
+$ip_address
+$port
+$ip_alias
+EOF
+
+echo "All node installations were successful"
