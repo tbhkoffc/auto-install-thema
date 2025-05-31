@@ -7,15 +7,18 @@
 ## Command Install :
 
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/SkyzoOffc/Pterodactyl-Theme-Autoinstaller/main/install.sh)
+bash <(curl -s https://raw.githubusercontent.com/tbhkoffc/auto-install-thema/main/install.sh)
 ```
 
 ## Fitur Tools :
 
+- Install Pterodactyl
+- Install Nodes
 - Install Tema Stellar
 - Install Tema Billing
 - Install Tema Enigma
 - Uninstall Tema
+- Unistall Panel
 
  (Token Code : tbhkoffc)
 
@@ -33,4 +36,4 @@ _\* above is the OS that I tested, the rest can be tested by yourself._
 
 ## Credits 
 - Recode By [ TbhkOffc ](https://github.com/tbhkoffc)
-- Created by [ FOXSTORE ](https://github.com/Foxstoree)
+- Created by [ ZERONE ](https://github.com/Zeroneoffc)
