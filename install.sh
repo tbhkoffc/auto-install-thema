@@ -11,7 +11,7 @@ display_welcome() {
   echo -e "${YELLOW}[+] =============================================== [+]${NC}"
   echo -e "${YELLOW}[+]                                                 [+]${NC}"
   echo -e "${YELLOW}[+]      AUTO INSTALLER THEMA PTERODACTYL           [+]${NC}"
-  echo -e "${YELLOW}[+]                © TBHKOFFC                       [+]${NC}"
+  echo -e "${YELLOW}[+]               © TBHKOFFC                        [+]${NC}"
   echo -e "${YELLOW}[+]                                                 [+]${NC}"
   echo -e "${YELLOW}[+] =============================================== [+]${NC}"
   echo -e ""
@@ -21,7 +21,7 @@ display_welcome() {
   echo -e "𝗧𝗘𝗟𝗘𝗚𝗥𝗔𝗠 :"
   echo -e "@jayaeditz_26"
   echo -e "𝗖𝗥𝗘𝗗𝗜𝗧𝗦 :"
-  echo -e "@foxstore"
+  echo -e "@zeronee"
   sleep 4
   clear
 }
@@ -118,7 +118,8 @@ if [ "$SELECT_THEME" -eq 1 ]; then
   echo -e "                                                                   "
   sudo cp -rfT /root/pterodactyl /var/www/pterodactyl
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
-  export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")" [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
   nvm install 16
   nvm alias default 16
   sudo apt install -y nodejs
@@ -148,7 +149,8 @@ elif [ "$SELECT_THEME" -eq 2 ]; then
   echo -e "                                                       "
   sudo cp -rfT /root/pterodactyl /var/www/pterodactyl
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
-  export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")" [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
   nvm install 16
   nvm alias default 16
   sudo apt install -y nodejs
@@ -192,7 +194,8 @@ elif [ "$SELECT_THEME" -eq 3 ]; then
 
   sudo cp -rfT /root/pterodactyl /var/www/pterodactyl
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
-  export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")" [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
   nvm install 16
   nvm alias default 16
   sudo apt install -y nodejs
@@ -243,7 +246,8 @@ wget -O /root/stellar.zip https://github.com/tbhkoffc/auto-install-thema/raw/mai
 unzip /root/stellar.zip -d /root/pterodactyl
 sudo cp -rfT /root/pterodactyl /var/www/pterodactyl
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")" [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 nvm install 16
 nvm alias default 16
 sudo apt install -y nodejs
