@@ -28,20 +28,20 @@ display_welcome() {
 
 install_jq() {
   echo -e "                                                       "
-  echo -e "${BLUE}[+] =============================================== [+]${NC}"
-  echo -e "${BLUE}[+]             INSTALLATION PROGRESS ( UPDATE & INSTALL JQUERY )                 [+]${NC}"
-  echo -e "${BLUE}[+] =============================================== [+]${NC}"
+  echo -e "${YELLOW}[+] =============================================== [+]${NC}"
+  echo -e "${YELLOW}[+]              UPDATE & INSTALL JQ                 [+]${NC}"
+  echo -e "${YELLOW}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
   sudo apt update && sudo apt install -y jq
   if [ $? -eq 0 ]; then
     echo -e "                                                       "
     echo -e "${GREEN}[+] =============================================== [+]${NC}"
-    echo -e "${GREEN}[+]              JQUERY SUCCESSFULLY INSTALLED                [+]${NC}"
+    echo -e "${GREEN}[+]              JQ SUCCESSFULLY INSTALLED                [+]${NC}"
     echo -e "${GREEN}[+] =============================================== [+]${NC}"
   else
     echo -e "                                                       "
     echo -e "${RED}[+] =============================================== [+]${NC}"
-    echo -e "${RED}[+]              JQUERY INSTALLATION FAILED                   [+]${NC}"
+    echo -e "${RED}[+]              JQ INSTALLATION FAILED                   [+]${NC}"
     echo -e "${RED}[+] =============================================== [+]${NC}"
     exit 1
   fi
@@ -51,9 +51,9 @@ install_jq() {
 }
 check_token() {
   echo -e "                                                       "
-  echo -e "${BLUE}[+] =============================================== [+]${NC}"
-  echo -e "${BLUE}[+]               LICENSE ISSUED BY TBHK            [+]${NC}"
-  echo -e "${BLUE}[+] =============================================== [+]${NC}"
+  echo -e "${YELLOW}[+] =============================================== [+]${NC}"
+  echo -e "${YELLOW}[+]               LICENSE ISSUED BY TBHK            [+]${NC}"
+  echo -e "${YELLOW}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
   echo -e "${RED}Please Enter Access Token :${NC}"
   read -r USER_TOKEN
@@ -71,9 +71,9 @@ check_token() {
 install_theme() {
   while true; do
     echo -e "                                                       "
-    echo -e "${BLUE}[+] =============================================== [+]${NC}"
-    echo -e "${BLUE}[+]                   PLEASE SELECT INSTALLATION METHOD                  [+]${NC}"
-    echo -e "${BLUE}[+] =============================================== [+]${NC}"
+    echo -e "${YELLOW}[+] =============================================== [+]${NC}"
+    echo -e "${YELLOW}[+]                   PLEASE SELECT INSTALLATION METHOD                  [+]${NC}"
+    echo -e "${YELLOW}[+] =============================================== [+]${NC}"
     echo -e "                                                       "
     echo -e "Choose Theme You Want To Install"
     echo "1. stellar"
@@ -84,15 +84,15 @@ install_theme() {
     read -r SELECT_THEME
     case "$SELECT_THEME" in
       1)
-        THEME_URL=$(echo -e "https://github.com/SkyzoOffc/Pterodactyl-Theme-Autoinstaller/raw/main/stellar.zip")        
+        THEME_URL=$(echo -e "https://github.com/tbhkoffc/auto-install-thema/raw/main/stellar.zip")        
         break
         ;;
       2)
-        THEME_URL=$(echo -e "https://github.com/SkyzoOffc/Pterodactyl-Theme-Autoinstaller/raw/main/billing.zip")
+        THEME_URL=$(echo -e "https://github.com/tbhkoffc/auto-install-thema/raw/main/billing.zip")
         break
         ;;
       3)
-        THEME_URL=$(echo -e "https://github.com/SkyzoOffc/Pterodactyl-Theme-Autoinstaller/raw/main/enigma.zip")
+        THEME_URL=$(echo -e "https://github.com/tbhkoffc/auto-install-thema/raw/main/enigma.zip")
         break
         ;; 
       x)
@@ -112,12 +112,15 @@ if [ -e /root/pterodactyl ]; then
   
 if [ "$SELECT_THEME" -eq 1 ]; then
   echo -e "                                                       "
-  echo -e "${BLUE}[+] =============================================== [+]${NC}"
-  echo -e "${BLUE}[+]                  STARTING THE STELLAR THEME INSTALLATION               [+]${NC}"
-  echo -e "${BLUE}[+] =============================================== [+]${NC}"
+  echo -e "${YELLOW}[+] =============================================== [+]${NC}"
+  echo -e "${YELLOW}[+]                  STARTING THE STELLAR THEME INSTALLATION               [+]${NC}"
+  echo -e "${YELLOW}[+] =============================================== [+]${NC}"
   echo -e "                                                                   "
   sudo cp -rfT /root/pterodactyl /var/www/pterodactyl
-  curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+  export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")" [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  nvm install 16
+  nvm alias default 16
   sudo apt install -y nodejs
   sudo npm i -g yarn
   cd /var/www/pterodactyl
@@ -139,12 +142,15 @@ if [ "$SELECT_THEME" -eq 1 ]; then
 
 elif [ "$SELECT_THEME" -eq 2 ]; then
   echo -e "                                                       "
-  echo -e "${BLUE}[+] =============================================== [+]${NC}"
-  echo -e "${BLUE}[+]                  STARTING THE BILLING THEME INSTALLATION               [+]${NC}"
-  echo -e "${BLUE}[+] =============================================== [+]${NC}"
+  echo -e "${YELLOW}[+] =============================================== [+]${NC}"
+  echo -e "${YELLOW}[+]                  STARTING THE BILLING THEME INSTALLATION               [+]${NC}"
+  echo -e "${YELLOW}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
   sudo cp -rfT /root/pterodactyl /var/www/pterodactyl
-  curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+  export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")" [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  nvm install 16
+  nvm alias default 16
   sudo apt install -y nodejs
   npm i -g yarn
   cd /var/www/pterodactyl
@@ -167,9 +173,9 @@ elif [ "$SELECT_THEME" -eq 2 ]; then
 
 elif [ "$SELECT_THEME" -eq 3 ]; then
   echo -e "                                                       "
-  echo -e "${BLUE}[+] =============================================== [+]${NC}"
-  echo -e "${BLUE}[+]                  STARTING THE ENIGMA THEME INSTALLATION               [+]${NC}"
-  echo -e "${BLUE}[+] =============================================== [+]${NC}"
+  echo -e "${YELLOW}[+] =============================================== [+]${NC}"
+  echo -e "${YELLOW}[+]                  STARTING THE ENIGMA THEME INSTALLATION               [+]${NC}"
+  echo -e "${YELLOW}[+] =============================================== [+]${NC}"
   echo -e "                                                                   "
 
     echo -e "${YELLOW}Enter the WA link (https://wa.me...) : ${NC}"
@@ -185,7 +191,10 @@ elif [ "$SELECT_THEME" -eq 3 ]; then
     
 
   sudo cp -rfT /root/pterodactyl /var/www/pterodactyl
-  curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+  export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")" [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  nvm install 16
+  nvm alias default 16
   sudo apt install -y nodejs
   sudo npm i -g yarn
   cd /var/www/pterodactyl
@@ -210,14 +219,14 @@ fi
 
 uninstall_theme() {
   echo -e "                                                       "
-  echo -e "${BLUE}[+] =============================================== [+]${NC}"
-  echo -e "${BLUE}[+]                    PTERODACTYL THEME REMOVAL                 [+]${NC}"
-  echo -e "${BLUE}[+] =============================================== [+]${NC}"
+  echo -e "${YELLOW}[+] =============================================== [+]${NC}"
+  echo -e "${YELLOW}[+]                    UNISTALL THEME                 [+]${NC}"
+  echo -e "${YELLOW}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
-  bash <(curl https://raw.githubusercontent.com/VallzHost/installer-theme/main/repair.sh)
+  bash <(curl https://raw.githubusercontent.com/tbhkoffc/auto-install-thema/main/repair.sh)
   echo -e "                                                       "
   echo -e "${GREEN}[+] =============================================== [+]${NC}"
-  echo -e "${GREEN}[+]                 PTERODACTYL THEME REMOVAL SUCCESSFUL             [+]${NC}"
+  echo -e "${GREEN}[+]                 UNISTALL THEME SUCCESSFUL             [+]${NC}"
   echo -e "${GREEN}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
   sleep 2
@@ -225,15 +234,18 @@ uninstall_theme() {
 }
 install_themeSteeler() {
 echo -e "                                                       "
-echo -e "${BLUE}[+] =============================================== [+]${NC}"
-echo -e "${BLUE}[+]                  STARTING THE STELLAR THEME INSTALLATION               [+]${NC}"
-echo -e "${BLUE}[+] =============================================== [+]${NC}"
+echo -e "${YELLOW}[+] =============================================== [+]${NC}"
+echo -e "${YELLOW}[+]                  STARTING THE STELLAR THEME INSTALLATION               [+]${NC}"
+echo -e "${YELLOW}[+] =============================================== [+]${NC}"
 echo -e "                                                                   "
 
-wget -O /root/stellar.zip https://github.com/SkyzoOffc/Pterodactyl-Theme-Autoinstaller/raw/main/stellar.zip
+wget -O /root/stellar.zip https://github.com/tbhkoffc/auto-install-thema/raw/main/stellar.zip
 unzip /root/stellar.zip -d /root/pterodactyl
 sudo cp -rfT /root/pterodactyl /var/www/pterodactyl
-curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")" [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+nvm install 16
+nvm alias default 16
 sudo apt install -y nodejs
 sudo npm i -g yarn
 cd /var/www/pterodactyl
@@ -256,9 +268,9 @@ exit 0
 }
 create_node() {
   echo -e "                                                       "
-  echo -e "${BLUE}[+] =============================================== [+]${NC}"
-  echo -e "${BLUE}[+]                    CREATE NODE                     [+]${NC}"
-  echo -e "${BLUE}[+] =============================================== [+]${NC}"
+  echo -e "${YELLOW}[+] =============================================== [+]${NC}"
+  echo -e "${YELLOW}[+]                    CREATE NODE                     [+]${NC}"
+  echo -e "${YELLOW}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
 
 read -p "Enter location name: " location_name
@@ -305,9 +317,9 @@ EOF
 }
 uninstall_panel() {
   echo -e "                                                       "
-  echo -e "${BLUE}[+] =============================================== [+]${NC}"
-  echo -e "${BLUE}[+]           STARTING THE PTERODACTYL PANEL REMOVAL PROCESS                 [+]${NC}"
-  echo -e "${BLUE}[+] =============================================== [+]${NC}"
+  echo -e "${YELLOW}[+] =============================================== [+]${NC}"
+  echo -e "${YELLOW}[+]           STARTING UNISTALL PTERODACTYL                 [+]${NC}"
+  echo -e "${YELLOW}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
 
 
@@ -321,7 +333,7 @@ EOF
 
   echo -e "                                                       "
   echo -e "${GREEN}[+] =============================================== [+]${NC}"
-  echo -e "${GREEN}[+]                 UNINSTALL PANEL SUKSES             [+]${NC}"
+  echo -e "${GREEN}[+]                 UNINSTALL PTERODACTYL SUCCESSFUL             [+]${NC}"
   echo -e "${GREEN}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
   sleep 2
@@ -330,9 +342,9 @@ EOF
 }
 configure_wings() {
   echo -e "                                                       "
-  echo -e "${BLUE}[+] =============================================== [+]${NC}"
-  echo -e "${BLUE}[+]                    CONFIGURE WINGS                 [+]${NC}"
-  echo -e "${BLUE}[+] =============================================== [+]${NC}"
+  echo -e "${YELLOW}[+] =============================================== [+]${NC}"
+  echo -e "${YELLOW}[+]                    CONFIGURE WINGS                 [+]${NC}"
+  echo -e "${YELLOW}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
 
 read -p "Enter token Configure running wings: " wings
@@ -352,9 +364,9 @@ sudo systemctl start wings
 }
 hackback_panel() {
   echo -e "                                                       "
-  echo -e "${BLUE}[+] =============================================== [+]${NC}"
-  echo -e "${BLUE}[+]                    HACK BACK PANEL                 [+]${NC}"
-  echo -e "${BLUE}[+] =============================================== [+]${NC}"
+  echo -e "${YELLOW}[+] =============================================== [+]${NC}"
+  echo -e "${YELLOW}[+]                    HACK BACK PANEL                 [+]${NC}"
+  echo -e "${YELLOW}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
 read -p "Enter Panel Username: " user
 read -p "Login Password: " psswdhb
