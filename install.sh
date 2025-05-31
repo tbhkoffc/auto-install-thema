@@ -272,41 +272,8 @@ create_node() {
   echo -e "${YELLOW}[+]                    CREATE NODE                  [+]${NC}"
   echo -e "${YELLOW}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
-
-read -p "Enter location name: " location_name
-read -p "Enter a location description: " location_description
-read -p "Enter domain: " domain
-read -p "Enter the node name: " node_name
-read -p "Enter RAM (in MB): " ram
-read -p "Enter the maximum amount of disk space (in MB): " disk_space
-read -p "Enter location id: " locid
-cd /var/www/pterodactyl || { echo "Directory not found"; exit 1; }
-php artisan p:location:make <<EOF
-$location_name
-$location_description
-EOF
-
-
-php artisan p:node:make <<EOF
-$node_name
-$location_description
-$locid
-https
-$domain
-yes
-no
-no
-$ram
-$ram
-$disk_space
-$disk_space
-100
-8080
-2022
-/var/lib/pterodactyl/volumes
-EOF
-
-  echo -e "                                                       "
+  bash <(curl https://raw.githubusercontent.com/tbhkoffc/auto-install-thema/main/createnode.sh)
+  echo -e "                                                       "                                     "
   echo -e "${GREEN}[+] =============================================== [+]${NC}"
   echo -e "${GREEN}[+]        CREATE NODE & LOCATION SUCCESSFUL        [+]${NC}"
   echo -e "${GREEN}[+] =============================================== [+]${NC}"
