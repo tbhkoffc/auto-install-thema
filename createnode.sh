@@ -53,5 +53,3 @@ $ip_address
 $port
 $ip_alias
 EOF
-
-echo "All node installations were successful"
