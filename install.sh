@@ -10,8 +10,8 @@ display_welcome() {
   echo -e ""
   echo -e "${YELLOW}[+] =============================================== [+]${NC}"
   echo -e "${YELLOW}[+]                                                 [+]${NC}"
-  echo -e "${YELLOW}[+]                AUTO INSTALLER THEMA PTERODACTYL            [+]${NC}"
-  echo -e "${YELLOW}[+]                  © TBHKOFFC                [+]${NC}"
+  echo -e "${YELLOW}[+]      AUTO INSTALLER THEMA PTERODACTYL           [+]${NC}"
+  echo -e "${YELLOW}[+]                © TBHKOFFC                       [+]${NC}"
   echo -e "${YELLOW}[+]                                                 [+]${NC}"
   echo -e "${YELLOW}[+] =============================================== [+]${NC}"
   echo -e ""
@@ -29,20 +29,20 @@ display_welcome() {
 install_jq() {
   echo -e "                                                       "
   echo -e "${YELLOW}[+] =============================================== [+]${NC}"
-  echo -e "${YELLOW}[+]              UPDATE & INSTALL JQ                 [+]${NC}"
+  echo -e "${YELLOW}[+]                UPDATE & INSTALL JQ              [+]${NC}"
   echo -e "${YELLOW}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
   sudo apt update && sudo apt install -y jq
   if [ $? -eq 0 ]; then
     echo -e "                                                       "
     echo -e "${GREEN}[+] =============================================== [+]${NC}"
-    echo -e "${GREEN}[+]              JQ SUCCESSFULLY INSTALLED                [+]${NC}"
+    echo -e "${GREEN}[+]              JQ SUCCESSFULLY INSTALLED          [+]${NC}"
     echo -e "${GREEN}[+] =============================================== [+]${NC}"
   else
     echo -e "                                                       "
-    echo -e "${RED}[+] =============================================== [+]${NC}"
-    echo -e "${RED}[+]              JQ INSTALLATION FAILED                   [+]${NC}"
-    echo -e "${RED}[+] =============================================== [+]${NC}"
+    echo -e "${RED}[+] ================================================ [+]${NC}"
+    echo -e "${RED}[+]                JQ INSTALLATION FAILED            [+]${NC}"
+    echo -e "${RED}[+] ================================================ [+]${NC}"
     exit 1
   fi
   echo -e "                                                       "
@@ -72,7 +72,7 @@ install_theme() {
   while true; do
     echo -e "                                                       "
     echo -e "${YELLOW}[+] =============================================== [+]${NC}"
-    echo -e "${YELLOW}[+]                   PLEASE SELECT INSTALLATION METHOD                  [+]${NC}"
+    echo -e "${YELLOW}[+]          PLEASE SELECT INSTALLATION METHOD      [+]${NC}"
     echo -e "${YELLOW}[+] =============================================== [+]${NC}"
     echo -e "                                                       "
     echo -e "Choose Theme You Want To Install"
@@ -113,7 +113,7 @@ if [ -e /root/pterodactyl ]; then
 if [ "$SELECT_THEME" -eq 1 ]; then
   echo -e "                                                       "
   echo -e "${YELLOW}[+] =============================================== [+]${NC}"
-  echo -e "${YELLOW}[+]                  STARTING THE STELLAR THEME INSTALLATION               [+]${NC}"
+  echo -e "${YELLOW}[+]      STARTING THE STELLAR THEME INSTALLATION    [+]${NC}"
   echo -e "${YELLOW}[+] =============================================== [+]${NC}"
   echo -e "                                                                   "
   sudo cp -rfT /root/pterodactyl /var/www/pterodactyl
@@ -133,7 +133,7 @@ if [ "$SELECT_THEME" -eq 1 ]; then
 
   echo -e "                                                       "
   echo -e "${GREEN}[+] =============================================== [+]${NC}"
-  echo -e "${GREEN}[+]                   INSTALLATION SUCCESSFUL               [+]${NC}"
+  echo -e "${GREEN}[+]             INSTALLATION SUCCESSFUL             [+]${NC}"
   echo -e "${GREEN}[+] =============================================== [+]${NC}"
   echo -e ""
   sleep 2
@@ -143,7 +143,7 @@ if [ "$SELECT_THEME" -eq 1 ]; then
 elif [ "$SELECT_THEME" -eq 2 ]; then
   echo -e "                                                       "
   echo -e "${YELLOW}[+] =============================================== [+]${NC}"
-  echo -e "${YELLOW}[+]                  STARTING THE BILLING THEME INSTALLATION               [+]${NC}"
+  echo -e "${YELLOW}[+]      STARTING THE BILLING THEME INSTALLATION    [+]${NC}"
   echo -e "${YELLOW}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
   sudo cp -rfT /root/pterodactyl /var/www/pterodactyl
@@ -164,7 +164,7 @@ elif [ "$SELECT_THEME" -eq 2 ]; then
 
   echo -e "                                                       "
   echo -e "${GREEN}[+] =============================================== [+]${NC}"
-  echo -e "${GREEN}[+]                  INSTALLATION SUCCESSFUL                [+]${NC}"
+  echo -e "${GREEN}[+]             INSTALLATION SUCCESSFUL             [+]${NC}"
   echo -e "${GREEN}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
   sleep 2
@@ -174,7 +174,7 @@ elif [ "$SELECT_THEME" -eq 2 ]; then
 elif [ "$SELECT_THEME" -eq 3 ]; then
   echo -e "                                                       "
   echo -e "${YELLOW}[+] =============================================== [+]${NC}"
-  echo -e "${YELLOW}[+]                  STARTING THE ENIGMA THEME INSTALLATION               [+]${NC}"
+  echo -e "${YELLOW}[+]      STARTING THE ENIGMA THEME INSTALLATION     [+]${NC}"
   echo -e "${YELLOW}[+] =============================================== [+]${NC}"
   echo -e "                                                                   "
 
@@ -207,7 +207,7 @@ elif [ "$SELECT_THEME" -eq 3 ]; then
 
   echo -e "                                                       "
   echo -e "${GREEN}[+] =============================================== [+]${NC}"
-  echo -e "${GREEN}[+]                   INSTALLATION SUCCESSFUL               [+]${NC}"
+  echo -e "${GREEN}[+]              INSTALLATION SUCCESSFUL            [+]${NC}"
   echo -e "${GREEN}[+] =============================================== [+]${NC}"
   echo -e ""
   sleep 5
@@ -220,13 +220,13 @@ fi
 uninstall_theme() {
   echo -e "                                                       "
   echo -e "${YELLOW}[+] =============================================== [+]${NC}"
-  echo -e "${YELLOW}[+]                    UNISTALL THEME                 [+]${NC}"
+  echo -e "${YELLOW}[+]                  UNISTALL THEME                 [+]${NC}"
   echo -e "${YELLOW}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
   bash <(curl https://raw.githubusercontent.com/tbhkoffc/auto-install-thema/main/repair.sh)
   echo -e "                                                       "
   echo -e "${GREEN}[+] =============================================== [+]${NC}"
-  echo -e "${GREEN}[+]                 UNISTALL THEME SUCCESSFUL             [+]${NC}"
+  echo -e "${GREEN}[+]             UNISTALL THEME SUCCESSFUL           [+]${NC}"
   echo -e "${GREEN}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
   sleep 2
@@ -235,7 +235,7 @@ uninstall_theme() {
 install_themeSteeler() {
 echo -e "                                                       "
 echo -e "${YELLOW}[+] =============================================== [+]${NC}"
-echo -e "${YELLOW}[+]                  STARTING THE STELLAR THEME INSTALLATION               [+]${NC}"
+echo -e "${YELLOW}[+]      STARTING THE STELLAR THEME INSTALLATION    [+]${NC}"
 echo -e "${YELLOW}[+] =============================================== [+]${NC}"
 echo -e "                                                                   "
 
@@ -258,7 +258,7 @@ sudo rm -rf /root/pterodactyl
 
 echo -e "                                                       "
 echo -e "${GREEN}[+] =============================================== [+]${NC}"
-echo -e "${GREEN}[+]                   INSTALLATION SUCCESSFUL               [+]${NC}"
+echo -e "${GREEN}[+]              INSTALLATION SUCCESSFUL            [+]${NC}"
 echo -e "${GREEN}[+] =============================================== [+]${NC}"
 echo -e "                                                       "
 sleep 2
@@ -269,7 +269,7 @@ exit 0
 create_node() {
   echo -e "                                                       "
   echo -e "${YELLOW}[+] =============================================== [+]${NC}"
-  echo -e "${YELLOW}[+]                    CREATE NODE                     [+]${NC}"
+  echo -e "${YELLOW}[+]                    CREATE NODE                  [+]${NC}"
   echo -e "${YELLOW}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
 
@@ -308,7 +308,7 @@ EOF
 
   echo -e "                                                       "
   echo -e "${GREEN}[+] =============================================== [+]${NC}"
-  echo -e "${GREEN}[+]        CREATE NODE & LOCATION SUCCESSFUL             [+]${NC}"
+  echo -e "${GREEN}[+]        CREATE NODE & LOCATION SUCCESSFUL        [+]${NC}"
   echo -e "${GREEN}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
   sleep 2
@@ -318,7 +318,7 @@ EOF
 uninstall_panel() {
   echo -e "                                                       "
   echo -e "${YELLOW}[+] =============================================== [+]${NC}"
-  echo -e "${YELLOW}[+]           STARTING UNISTALL PTERODACTYL                 [+]${NC}"
+  echo -e "${YELLOW}[+]           STARTING UNISTALL PTERODACTYL         [+]${NC}"
   echo -e "${YELLOW}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
 
@@ -333,7 +333,7 @@ EOF
 
   echo -e "                                                       "
   echo -e "${GREEN}[+] =============================================== [+]${NC}"
-  echo -e "${GREEN}[+]                 UNINSTALL PTERODACTYL SUCCESSFUL             [+]${NC}"
+  echo -e "${GREEN}[+]          UNINSTALL PTERODACTYL SUCCESSFUL       [+]${NC}"
   echo -e "${GREEN}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
   sleep 2
@@ -343,7 +343,7 @@ EOF
 configure_wings() {
   echo -e "                                                       "
   echo -e "${YELLOW}[+] =============================================== [+]${NC}"
-  echo -e "${YELLOW}[+]                    CONFIGURE WINGS                 [+]${NC}"
+  echo -e "${YELLOW}[+]                 CONFIGURE WINGS                 [+]${NC}"
   echo -e "${YELLOW}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
 
@@ -355,7 +355,7 @@ sudo systemctl start wings
 
   echo -e "                                                       "
   echo -e "${GREEN}[+] =============================================== [+]${NC}"
-  echo -e "${GREEN}[+]                 CONFIGURE WINGS SUKSES             [+]${NC}"
+  echo -e "${GREEN}[+]              CONFIGURE WINGS SUKSES             [+]${NC}"
   echo -e "${GREEN}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
   sleep 2
@@ -365,7 +365,7 @@ sudo systemctl start wings
 hackback_panel() {
   echo -e "                                                       "
   echo -e "${YELLOW}[+] =============================================== [+]${NC}"
-  echo -e "${YELLOW}[+]                    HACK BACK PANEL                 [+]${NC}"
+  echo -e "${YELLOW}[+]                 HACK BACK PANEL                 [+]${NC}"
   echo -e "${YELLOW}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
 read -p "Enter Panel Username: " user
@@ -381,7 +381,7 @@ $psswdhb
 EOF
   echo -e "                                                       "
   echo -e "${GREEN}[+] =============================================== [+]${NC}"
-  echo -e "${GREEN}[+]                 ACCOUNT HAS BEEN ADDED             [+]${NC}"
+  echo -e "${GREEN}[+]              ACCOUNT HAS BEEN ADDED             [+]${NC}"
   echo -e "${GREEN}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
   sleep 2
@@ -391,7 +391,7 @@ EOF
 ubahpw_vps() {
   echo -e "                                                       "
   echo -e "${GREEN}[+] =============================================== [+]${NC}"
-  echo -e "${GREEN}[+]                    CHANGE VPS PASSWORD       [+]${NC}"
+  echo -e "${GREEN}[+]                CHANGE VPS PASSWORD              [+]${NC}"
   echo -e "${GREEN}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
 read -p "Enter New Password: " pw
@@ -406,7 +406,7 @@ EOF
 
   echo -e "                                                       "
   echo -e "${GREEN}[+] =============================================== [+]${NC}"
-  echo -e "${GREEN}[+]                 CHANGE VPS PASSWORD SUCCESSFUL         [+]${NC}"
+  echo -e "${GREEN}[+]          CHANGE VPS PASSWORD SUCCESSFUL         [+]${NC}"
   echo -e "${GREEN}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
   sleep 2
@@ -425,11 +425,11 @@ while true; do
   echo -e "${RED}  ,ggggg        gggggggg.                                 ${NC}"
   echo -e "${RED} ,ggg'               'ggg.                                ${NC}"
   echo -e "${RED}',gg       ,ggg.      'ggg:                               ${NC}"
-  echo -e "${RED}'ggg      ,gg'''  .    ggg       Auto Installer Tbhk   ${NC}"
+  echo -e "${RED}'ggg      ,gg'''  .    ggg       Auto Installer Tbhk      ${NC}"
   echo -e "${RED}gggg      gg     ,     ggg      ------------------------  ${NC}"
-  echo -e "${RED}ggg:     gg.     -   ,ggg       • Telegram : jayaeditz_26      ${NC}"
-  echo -e "${RED} ggg:     ggg._    _,ggg        • Credit  : TbhkOffc  ${NC}"
-  echo -e "${RED} ggg.    '.'''ggggggp           • Support by Tbhk  ${NC}"
+  echo -e "${RED}ggg:     gg.     -   ,ggg       • Telegram : jayaeditz_26 ${NC}"
+  echo -e "${RED} ggg:     ggg._    _,ggg        • Credit  : TbhkOffc      ${NC}"
+  echo -e "${RED} ggg.    '.'''ggggggp           • Support by Tbhk         ${NC}"
   echo -e "${RED}  'ggg    '-.__                                           ${NC}"
   echo -e "${RED}    ggg                                                   ${NC}"
   echo -e "${RED}      ggg                                                 ${NC}"
